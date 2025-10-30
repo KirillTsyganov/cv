@@ -1,4 +1,3 @@
-/* General Body Styles */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     line-height: 1.6;
@@ -8,26 +7,53 @@ body {
     padding: 40px 20px;
 }
 
-/* Container for the resume content */
 #main {
     max-width: 800px;
     margin: auto;
-    background-color: #fff;
-    padding: 20px 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
-div#cv-body {
-    padding-top: 20px;
+#print-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    color: #aaa;
+    text-decoration: none;
+    z-index: 100;
+    transition: color 0.2s ease-in-out;
 }
 
-/* Header Section Styles */
+#print-button:hover {
+    color: #3498db;
+}
+
+
+#content-wrapper {
+    display: flex;
+}
+
+#cv-body {
+    flex: 4;
+    padding: 0 30px;
+    background-color: #fff;
+}
+
+#cv-sidebar {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
 #cv-header {
-    text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px 30px 20px 30px;
+    margin: 0;
+    text-align: center;
 }
 
 #cv-header-header {
@@ -46,7 +72,12 @@ div#cv-body {
 }
 
 #cv-header-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 25px;
     font-size: 0.9em;
+    margin-top: 20px;
 }
 
 #cv-header-contact a {
@@ -58,7 +89,10 @@ div#cv-body {
     text-decoration: underline;
 }
 
-/* General Section Styles */
+.cv-header-contact a i {
+    margin-right: 5px;
+}
+
 .cv-section-header {
     font-size: 1.5em;
     color: #2c3e50;
@@ -66,9 +100,9 @@ div#cv-body {
     padding-bottom: 5px;
     margin-top: 20px;
     margin-bottom: 15px;
+    font-size: 1.2em;
 }
 
-/* Skills Section Styles */
 #cv-skills-table {
     width: 100%;
     border-collapse: collapse;
@@ -82,20 +116,17 @@ div#cv-body {
     vertical-align: top;
 }
 
-/* Style the first column (category) of the skills table */
 #cv-skills-table th:first-child {
     font-weight: bold;
     width: 25%;
     color: #333;
 }
 
-/* Style the second column (details) of the skills table */
 #cv-skills-table th:last-child {
     font-weight: normal;
     color: #555;
 }
 
-/* Styles for the generated job experience from cv.js */
 .cv-experience-job {
     margin-bottom: 25px;
 }
@@ -104,7 +135,7 @@ div#cv-body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .cv-experience-job-header > p, .cv-experience-job-meta p {
@@ -120,18 +151,25 @@ div#cv-body {
 .cv-experience-job-meta {
     display: flex;
     align-items: baseline;
-    gap: 10px; /* Adds a small space between company and date */
+    gap: 10px;
 }
 
 .cv-experience-job-company {
     font-style: italic;
+    color: #005f73;
 }
 
 .cv-experience-job-length {
     color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-/* Professional Experience Section Styles */
+.cv-experience-job-length .fa-calendar-days {
+    color: #888;
+}
+
 .experience-item {
     margin-bottom: 20px;
 }
@@ -158,7 +196,6 @@ div#cv-body {
     margin-bottom: 5px;
 }
 
-/* Selected Projects Section Styles */
 .project-item {
     margin-bottom: 20px;
 }
@@ -171,7 +208,6 @@ div#cv-body {
     color: #555;
 }
 
-/* Styles for the generated projects from cv.js */
 .cv-projects-project {
     margin-bottom: 25px;
 }
@@ -190,11 +226,10 @@ div#cv-body {
 
 .cv-projects-project-company {
     font-style: italic;
-    color: #555;
+    color: #005f73;
     margin: 0;
 }
 
-/* Note: This ID should ideally be a class in your cv.js for valid HTML */
 #cv-projects-project-summary {
     font-style: italic;
     color: #555;
@@ -203,7 +238,6 @@ div#cv-body {
     border-left: 3px solid #eee;
 }
 
-/* Education Section Styles */
 .cv-education-degree {
     display: flex;
     justify-content: space-between;
@@ -216,4 +250,141 @@ div#cv-body {
 .cv-education-degree p {
     margin: 0;
 }
+
+.cv-education-date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #555;
+}
+
+.cv-education-date .fa-calendar-days {
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        background-color: #fff;
+    }
+
+    #main {
+        max-width: 100%;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #content-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    #cv-body, #cv-sidebar {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    #cv-header {
+        padding: 20px;
+    }
+
+    .cv-experience-job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .cv-experience-job-meta {
+        gap: 15px;
+    }
+}
+
+@media print {
+    /* 1. Page & Container Reset */
+    body {
+        padding: 0;
+        margin: 0; /* Ensures no weird margins from OS/browser default print settings */
+        background-color: #fff;
+        font-size: 10pt; /* Standard print font size */
+    }
+
+    #print-button {
+        display: none;
+    }
+
+    #main {
+        /* Reset any screen-only styles */
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    #cv-header {
+        /* Use margins for separation in print */
+        padding: 0;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    /* 2. Column Fix: Use Display Table for Reliability */
+    #content-wrapper {
+        /* Use table display to prevent columns from splitting pages */
+        display: table;
+        width: 100%;
+        /* Tell the browser to keep the columns together */
+        page-break-inside: avoid;
+    }
+
+    #cv-body {
+        /* Treat as a table cell */
+        display: table-cell;
+        /* Set width and padding */
+        width: 80%;
+        padding: 0 30px;
+        background-color: transparent;
+        /* Ensure no breaking inside a column */
+        page-break-inside: avoid;
+    }
+
+    #cv-sidebar {
+        /* Treat as a table cell */
+        display: table-cell;
+        /* Set width and padding */
+        width: 20%;
+        background-color: transparent;
+        padding: 0 15px;
+        /* Ensure no breaking inside a column */
+        page-break-inside: avoid;
+    }
+
+    /* 3. General Print Adjustments */
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    #cv-header-contact a {
+        color: #333;
+    }
+
+    /* 4. Content Flow Control (Excellent rules you already had) */
+    .cv-experience-job,
+    .cv-projects-project,
+    .cv-education-degree {
+        /* Keep job/project/degree blocks together on one page */
+        page-break-inside: avoid;
+    }
+
+    .cv-section-header {
+        /* Avoid placing a header at the bottom of a page without content */
+        page-break-after: avoid;
+    }
+
+    /* Force color/background for better visibility, especially if print is set to grayscale */
+    #cv-header, #cv-body {
+        color: #333 !important;
+        background-color: #fff !important;
+    }
 }
