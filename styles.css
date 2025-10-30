@@ -95,6 +95,42 @@ div#cv-body {
     color: #555;
 }
 
+/* Styles for the generated job experience from cv.js */
+.cv-experience-job {
+    margin-bottom: 25px;
+}
+
+.cv-experience-job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.cv-experience-job-header > p, .cv-experience-job-meta p {
+    margin: 0;
+}
+
+.cv-experience-job-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.cv-experience-job-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 10px; /* Adds a small space between company and date */
+}
+
+.cv-experience-job-company {
+    font-style: italic;
+}
+
+.cv-experience-job-length {
+    color: #555;
+}
+
 /* Professional Experience Section Styles */
 .experience-item {
     margin-bottom: 20px;
@@ -133,4 +169,51 @@ div#cv-body {
     border-left: 3px solid #eee;
     font-style: italic;
     color: #555;
+}
+
+/* Styles for the generated projects from cv.js */
+.cv-projects-project {
+    margin-bottom: 25px;
+}
+
+.cv-projects-project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.cv-projects-project-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cv-projects-project-company {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
+/* Note: This ID should ideally be a class in your cv.js for valid HTML */
+#cv-projects-project-summary {
+    font-style: italic;
+    color: #555;
+    margin: 5px 0 10px 0;
+    padding-left: 15px;
+    border-left: 3px solid #eee;
+}
+
+/* Education Section Styles */
+.cv-education-degree {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cv-education-degree p {
+    margin: 0;
+}
 }
