@@ -1,0 +1,136 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* Container for the resume content */
+#main {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+div#cv-body {
+    padding-top: 20px;
+}
+
+/* Header Section Styles */
+#cv-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+#cv-header-header {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+#cv-header-aboutme {
+    margin: 0 0 15px 0;
+    font-size: 1.1em;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cv-header-contact {
+    font-size: 0.9em;
+}
+
+#cv-header-contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+#cv-header-contact a:hover {
+    text-decoration: underline;
+}
+
+/* General Section Styles */
+.cv-section-header {
+    font-size: 1.5em;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Skills Section Styles */
+#cv-skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#cv-skills-table th {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+
+/* Style the first column (category) of the skills table */
+#cv-skills-table th:first-child {
+    font-weight: bold;
+    width: 25%;
+    color: #333;
+}
+
+/* Style the second column (details) of the skills table */
+#cv-skills-table th:last-child {
+    font-weight: normal;
+    color: #555;
+}
+
+/* Professional Experience Section Styles */
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.experience-item p.company {
+    margin: 2px 0 8px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.experience-item ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #555;
+}
+
+.experience-item li {
+    margin-bottom: 5px;
+}
+
+/* Selected Projects Section Styles */
+.project-item {
+    margin-bottom: 20px;
+}
+
+.project-item blockquote {
+    margin: 5px 0 10px 0;
+    padding-left: 15px;
+    border-left: 3px solid #eee;
+    font-style: italic;
+    color: #555;
+}
