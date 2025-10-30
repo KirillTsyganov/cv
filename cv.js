@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     </div>
                                   <ul class='cv-projects-project-descriptions'>`;
 
-                for (let i = 2; i < project.length; i++) {
+                for (let i = 3; i < project.length; i++) {
                     projectHTML += `<li class='cv-projects-project-description'>${project[i]}</li>`;
                 }
 
