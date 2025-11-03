@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bodyArea = document.body;
 
+    const navToggleButton = document.getElementById('nav-toggle-button');
+    const topNav = document.getElementById('top-nav');
+
+    if (navToggleButton && topNav) {
+        navToggleButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent click from immediately closing menu
+            topNav.style.display = topNav.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close menu when clicking a nav link or outside the menu
+        document.addEventListener('click', (e) => {
+            if (topNav.style.display === 'block' && !topNav.contains(e.target)) {
+                topNav.style.display = 'none';
+            }
+        });
+    }
+
     const printButton = document.getElementById('print-button');
     if (printButton) {
         printButton.addEventListener('click', (e) => {
