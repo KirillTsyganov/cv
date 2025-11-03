@@ -81,7 +81,7 @@ body {
 }
 
 #cv-header-contact a {
-    color: #3498db;
+    color: #2b78fe;
     text-decoration: none;
 }
 
@@ -94,13 +94,15 @@ body {
 }
 
 .cv-section-header {
-    font-size: 1.5em;
-    color: #2c3e50;
+    font-size: 1.7em;
+    /* color: #2c3e50; */
+    /* color: #0157db; */
+    color: #3498db;
+    /* color: #2b78fe; */
     border-bottom: 2px solid #eee;
     padding-bottom: 5px;
     margin-top: 20px;
     margin-bottom: 15px;
-    font-size: 1.2em;
 }
 
 #cv-skills-table {
@@ -146,6 +148,12 @@ body {
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
+}
+
+.cv-experience-job-title .fa-briefcase {
+    color: #888;
+    margin-right: 6px;
+    font-size: 0.9em;
 }
 
 .cv-experience-job-meta {
@@ -224,6 +232,12 @@ body {
     margin: 0;
 }
 
+.cv-projects-project-title .fa-chart-simple {
+    color: #888;
+    margin-right: 6px;
+    font-size: 0.9em;
+}
+
 .cv-projects-project-company {
     font-style: italic;
     color: #005f73;
@@ -263,12 +277,141 @@ body {
 }
 .cv-education-university {
     margin: 2px 0;
-    color: #555;
-    font-style: italic;
+    color: #145972;
+    /* text-decoration: underline; */
 }
 
 .cv-education-discipline {
     margin: 2px 0;
     color: #333;
     font-style: italic;
+    font-weight: bold;
+
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        background-color: #fff;
+    }
+
+    #main {
+        max-width: 100%;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #content-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    #cv-body, #cv-sidebar {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    #cv-header {
+        padding: 20px;
+    }
+
+    .cv-experience-job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .cv-experience-job-meta {
+        gap: 15px;
+    }
+}
+
+@media print {
+    /* 1. Page & Container Reset */
+    body {
+        padding: 0;
+        margin: 0; /* Ensures no weird margins from OS/browser default print settings */
+        background-color: #fff;
+        font-size: 10pt; /* Standard print font size */
+    }
+
+    #print-button {
+        display: none;
+    }
+
+    #main {
+        /* Reset any screen-only styles */
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    #cv-header {
+        /* Use margins for separation in print */
+        padding: 0;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    /* 2. Column Fix: Use Display Table for Reliability */
+    #content-wrapper {
+        /* Use table display to prevent columns from splitting pages */
+        display: table;
+        width: 100%;
+        /* Tell the browser to keep the columns together */
+        /* page-break-inside: avoid; */
+    }
+
+    #cv-body {
+        /* Treat as a table cell */
+        display: table-cell;
+        /* Set width and padding */
+        width: 80%;
+        padding: 0 30px;
+        background-color: transparent;
+        /* Ensure no breaking inside a column */
+        /* page-break-inside: avoid; */
+    }
+
+    #cv-sidebar {
+        /* Treat as a table cell */
+        display: table-cell;
+        /* Set width and padding */
+        width: 20%;
+        background-color: transparent;
+        padding: 0 15px;
+        /* Ensure no breaking inside a column */
+        /* page-break-inside: avoid; */
+    }
+
+    /* 3. General Print Adjustments */
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    #cv-header-contact a {
+        color: #333;
+    }
+
+    /* 4. Content Flow Control (Excellent rules you already had) */
+    .cv-experience-job,
+    .cv-projects-project,
+    .cv-education-item {
+        /* Keep job/project/degree blocks together on one page */
+        page-break-inside: avoid;
+    }
+
+    .cv-section-header {
+        /* Avoid placing a header at the bottom of a page without content */
+        page-break-after: avoid;
+    }
+
+    /* Force color/background for better visibility, especially if print is set to grayscale */
+    #cv-header, #cv-body {
+        color: #333 !important;
+        background-color: #fff !important;
+    }
 }

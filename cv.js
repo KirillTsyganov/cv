@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cv['experience'] && cv['experience'].forEach(jobExp => {
                 let jobExpHTML = `<div class='cv-experience-job'>
                                   <div class='cv-experience-job-header'>
-                                    <p class='cv-experience-job-title'>${jobExp[0]}</p>
+                                    <p class='cv-experience-job-title'><i class="fa-solid fa-briefcase"></i> ${jobExp[0]}</p>
                                     <div class="cv-experience-job-meta">
                                         <p class='cv-experience-job-company'>${jobExp[1]}</p>
                                         <p class='cv-experience-job-length'><i class="fa-regular fa-calendar-days"></i> ${jobExp[2]}</p>
@@ -73,11 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const projectsHTML = document.getElementById('cv-projects');
 
             projectsHTML.innerHTML = `<h2 class='cv-section-header'>Selected Projects</h2>`;
-            console.log(cv['projects']);
             cv['projects'] && cv['projects'].forEach(project => {
                 let projectHTML = `<div class='cv-projects-project'>
                                      <div class='cv-projects-project-header'>
-                                      <p class='cv-projects-project-title'>${project[0]}</p>
+                                      <p class='cv-projects-project-title'><i class="fa-solid fa-chart-simple"></i> ${project[0]}</p>
                                       <p class='cv-projects-project-company'>(${project[1]})</p>
                                     </div>
                                     <div>
@@ -97,11 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             educationHTML.innerHTML = `<h2 class='cv-section-header'>Education</h2>`;
             cv['education'] && cv['education'].forEach(edu => {
-                educationHTML.innerHTML += `<div class='cv-education-degree'>
-                                            <p class='cv-education-date'><i class="fa-regular fa-calendar-days"></i> ${edu[0]}</p>
-                                            <p class='cv-education-degree-name'>${edu[1]}</p>
-                                            <p class='cv-education-degree-discipline'>${edu[2]}</p>
-                                            <p class='cv-education-degree-uniname'>${edu[3]}</p>
+                // edu array: [studyDate, degreeName, disciplineName, uniName]
+                educationHTML.innerHTML += `<div class='cv-education-item'>
+                                                <div class='cv-education-degree'>
+                                                    <p class='cv-education-date'><i class="fa-regular fa-calendar-days"></i> ${edu[0]}</p>
+                                                    <p class='cv-education-degree-name'>${edu[1]}</p>
+                                                </div>
+                                                <p class='cv-education-discipline'>${edu[2]}</p>
+                                                <p class='cv-education-university'>${edu[3]}</p>
                                           </div>`;
             });
         })

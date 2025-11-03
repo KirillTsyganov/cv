@@ -85,6 +85,6 @@ Soft skills | Technical communication, stakeholder engagement, solution design
 
 ## Education
 
-- Honours, Bioinformatics (2013) | Monash University | Genomics Data
-- Bachelor of Science (2012) | The University of Melbourne | Double major Biochemistry and Molecular Science and Biotechnology
-- Victorian Certificate of Education (2006) | McKinnon Secondary College | The Holland Foundation Achievement Award for Community Service
+- Honours, Bioinformatics | 2013 | Monash University | Genomics Data
+- Bachelor of Science | 2012 | The University of Melbourne | Biochemistry and Molecular Science, and Biotechnology
+- VCE | 2006 | McKinnon Secondary College | The Holland Foundation Achievement Award for Community Service
