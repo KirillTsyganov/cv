@@ -10,9 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
             topNav.style.display = topNav.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Close menu when clicking a nav link or outside the menu
+        // Close menu when clicking a nav link or anywhere outside the menu
         document.addEventListener('click', (e) => {
-            if (topNav.style.display === 'block' && !topNav.contains(e.target)) {
+            // If menu is open, and the click is on a nav link OR outside the nav container
+            if (topNav.style.display === 'block' &&
+               (topNav.contains(e.target) && e.target.tagName === 'A' || !document.getElementById('nav-container').contains(e.target))
+            ) {
                 topNav.style.display = 'none';
             }
         });
