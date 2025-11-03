@@ -97,15 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             educationHTML.innerHTML = `<h2 class='cv-section-header'>Education</h2>`;
             cv['education'] && cv['education'].forEach(edu => {
-                const degreeString = edu[0];
-                const dateMatch = degreeString.match(/\((\d{4})\)/);
-                const date = dateMatch ? dateMatch[1] : '';
-                const degreeName = degreeString.replace(/\s*\(\d{4}\)/, '');
-
                 educationHTML.innerHTML += `<div class='cv-education-degree'>
-                                            <p class='cv-education-degree-name'>${degreeName}</p>
-                                            <p class='cv-education-date'><i class="fa-regular fa-calendar-days"></i> ${date}</p>
+                                            <p class='cv-education-date'><i class="fa-regular fa-calendar-days"></i> ${edu[0]}</p>
+                                            <p class='cv-education-degree-name'>${edu[1]}</p>
                                             <p class='cv-education-degree-discipline'>${edu[2]}</p>
+                                            <p class='cv-education-degree-uniname'>${edu[3]}</p>
                                           </div>`;
             });
         })
@@ -223,8 +219,8 @@ function parseMarkdown(markdown) {
         } else if (cvEducation) {
             if (line.startsWith('-')) {
                 const eduDesc = line.replace('-', '').trim();
-                const [degreeName, uniName, disciplineName] = eduDesc.split('|').map(part => part.trim());
-                cv['education'].push([degreeName, uniName, disciplineName]);
+                const [degreeName, studyDate, uniName, disciplineName] = eduDesc.split('|').map(part => part.trim());
+                cv['education'].push([studyDate, degreeName, disciplineName, uniName]);
             }
         }
     }
